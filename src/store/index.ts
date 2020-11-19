@@ -19,10 +19,16 @@ const reducers = {
 const rootReducer = combineReducers(reducers);
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = configureStore({
+const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
     devTools: process.env.NODE_ENV !== 'production'
 });
 
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
+
+
+export {
+    store,
+    persistor
+};

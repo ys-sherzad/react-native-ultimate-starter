@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
 // main stack navigation
-import MainNavigation from './src/navigation-stack/MainNavigation';
+import RootStack from './src/navigation-stack/RootStack';
 
 // utils
 import { ThemeLight, ThemeDark } from './src/utils';
@@ -31,7 +31,7 @@ const App = () => {
     <Provider {...{ store }}>
       <PersistGate loading={null} {...{ persistor }}>
         <NavigationContainer>
-          <MainNavigation />
+          <RootStack />
         </NavigationContainer>
       </PersistGate>
     </Provider>

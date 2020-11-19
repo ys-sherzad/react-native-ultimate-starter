@@ -5,14 +5,14 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 // scenes
 import Home from '../containers/Home.container';
 
-interface HomeNavigationStackProps { }
+interface HomeStackProps { }
 
-const HomeStack = createStackNavigator();
+const HomeStackNavigator = createStackNavigator();
 
-const HomeNavigationStack = ({ }: HomeNavigationStackProps) => {
+const HomeStack = ({ }: HomeStackProps) => {
     return (
-        <HomeStack.Navigator>
-            <HomeStack.Screen
+        <HomeStackNavigator.Navigator>
+            <HomeStackNavigator.Screen
                 name='home'
                 component={Home}
                 options={{
@@ -20,11 +20,11 @@ const HomeNavigationStack = ({ }: HomeNavigationStackProps) => {
                     headerStyle: styles.headerStyle
                 }}
             />
-        </HomeStack.Navigator>
+        </HomeStackNavigator.Navigator>
     );
 };
 
-export default HomeNavigationStack;
+export default HomeStack;
 
 const styles = EStyleSheet.create({
     headerTitleStyle: {
