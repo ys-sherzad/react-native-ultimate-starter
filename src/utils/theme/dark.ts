@@ -1,6 +1,4 @@
-import { SCREEN_WIDTH } from '../dimensions';
-
-const rem = SCREEN_WIDTH > 340 ? 18 : 16;
+import { rem } from "../font";
 
 const dark = {
     $rem: rem,

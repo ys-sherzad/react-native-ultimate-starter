@@ -3,7 +3,7 @@ import { configureStore, combineReducers, Dispatch, MiddlewareAPI, getDefaultMid
 import logger from 'redux-logger';
 // for persisting state
 import { persistReducer, persistStore } from 'redux-persist';
-// storage type
+// storage type 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const persistConfig = {
