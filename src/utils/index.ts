@@ -1,6 +1,6 @@
 // theme
-import ThemeLight from './theme/theme-light';
-import ThemeDark from './theme/theme-dark';
+import ThemeLight from './theme/light';
+import ThemeDark from './theme/dark';
 
 // dimesions
 import * as Dimensions from './dimensions';

@@ -2,7 +2,7 @@ import { SCREEN_WIDTH } from '../dimensions';
 
 const rem = SCREEN_WIDTH > 340 ? 18 : 16;
 
-const THEME_DARK = {
+const light = {
     $rem: rem,
     $primary: 'blue',
     $accent: 'green',
@@ -13,4 +13,4 @@ const THEME_DARK = {
     $text: 'black'
 }
 
-export default THEME_DARK;
+export default light;

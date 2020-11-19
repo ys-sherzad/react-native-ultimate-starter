@@ -2,7 +2,7 @@ import React from 'react';
 // libs
 import { createDrawerNavigator } from '@react-navigation/drawer';
 // scenes
-import HomeNavigationStack from './HomeNavigationStack';
+import HomeNavigationStack from './HomeStack';
 
 interface DrawerProps { }
 

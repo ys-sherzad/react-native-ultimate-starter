@@ -10,22 +10,31 @@ import React from 'react';
 // libs
 import { NavigationContainer } from '@react-navigation/native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 // main stack navigation
 import MainNavigation from './src/navigation-stack/MainNavigation';
 
 // utils
-import { ThemeLight } from './src/utils';
+import { ThemeLight, ThemeDark } from './src/utils';
+
+// store
+import { store, persistor } from './src/store';
 
 
 // build styles
-EStyleSheet.build(ThemeLight);
+EStyleSheet.build(ThemeDark);
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <MainNavigation />
-    </NavigationContainer>
+    <Provider {...{ store }}>
+      <PersistGate loading={null} {...{ persistor }}>
+        <NavigationContainer>
+          <MainNavigation />
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
   );
 };
 

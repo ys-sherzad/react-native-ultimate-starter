@@ -1,6 +1,7 @@
 import React from 'react';
 // libs
 import { createStackNavigator } from '@react-navigation/stack';
+import EStyleSheet from 'react-native-extended-stylesheet';
 // scenes
 import Home from '../containers/Home.container';
 
@@ -14,6 +15,10 @@ const HomeNavigationStack = ({ }: HomeNavigationStackProps) => {
             <HomeStack.Screen
                 name='home'
                 component={Home}
+                options={{
+                    headerTitleStyle: styles.headerTitleStyle,
+                    headerStyle: styles.headerStyle
+                }}
             />
         </HomeStack.Navigator>
     );
@@ -21,3 +26,11 @@ const HomeNavigationStack = ({ }: HomeNavigationStackProps) => {
 
 export default HomeNavigationStack;
 
+const styles = EStyleSheet.create({
+    headerTitleStyle: {
+        color: '$text'
+    },
+    headerStyle: {
+        backgroundColor: '$headerBackground'
+    }
+})

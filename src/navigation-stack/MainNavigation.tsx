@@ -3,7 +3,6 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // scenes
-// import Home from '../containers/Home.container';
 import DrawerNavigation from './DrawerNavigation';
 
 
