@@ -1,11 +1,10 @@
-import { configureStore, combineReducers, Dispatch, MiddlewareAPI } from '@reduxjs/toolkit';
+import { configureStore, combineReducers, Dispatch, MiddlewareAPI, getDefaultMiddleware } from '@reduxjs/toolkit';
 // log dispatched actions
 import logger from 'redux-logger';
 // for persisting state
 import { persistReducer, persistStore } from 'redux-persist';
 // storage type
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 
 const persistConfig = {
     storage: AsyncStorage,
@@ -22,7 +21,8 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,
-    middleware: [logger],
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    devTools: process.env.NODE_ENV !== 'production'
 });
 
 export const persistor = persistStore(store);
