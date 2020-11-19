@@ -1,9 +1,15 @@
-export const round = {
+const round = {
     borderRadius: 999
 };
-export const semiRound10 = {
+const semiRound10 = {
     borderRadius: 10
 }
-export const semiRound20 = {
+const semiRound20 = {
     borderRadius: 20
+}
+
+export {
+    round,
+    semiRound10,
+    semiRound20,
 }

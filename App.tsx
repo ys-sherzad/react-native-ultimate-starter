@@ -14,13 +14,13 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
 // main stack navigation
-import RootStack from './src/navigation-stack/RootStack';
+import RootStack from './src/navigation/RootStack';
 
 // utils
 import { ThemeLight, ThemeDark } from './src/utils';
 
 // store
-import { store, persistor } from './src/store';
+import store, { persistor } from './src/store';
 
 
 // build styles

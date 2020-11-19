@@ -1,10 +1,12 @@
-import { configureStore, combineReducers, Dispatch, MiddlewareAPI, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 // log dispatched actions
 import logger from 'redux-logger';
 // for persisting state
 import { persistReducer, persistStore } from 'redux-persist';
 // storage type 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// root reducer
+import rootReducer, { RootState } from './rootReducer';
 
 const persistConfig = {
     storage: AsyncStorage,
@@ -12,23 +14,27 @@ const persistConfig = {
     key: 'my_app',
 };
 
-const reducers = {
-
-}
-
-const rootReducer = combineReducers(reducers);
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
     reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    middleware: [logger],
     devTools: process.env.NODE_ENV !== 'production'
 });
 
-const persistor = persistStore(store);
+//@ts-ignore
+if (process.env.NODE_ENV === 'development' && module.hot) {
+    // @ts-ignore
+    module.hot.accept('./rootReducer', () => {
+        const newRootReducer = require('./rootReducer').default
+        store.replaceReducer(newRootReducer)
+    })
+}
 
+export const persistor = persistStore(store);
 
-export {
-    store,
-    persistor
-};
+export type AppDispatch = typeof store.dispatch;
+
+export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
+
+export default store;
