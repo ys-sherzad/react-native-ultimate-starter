@@ -27,9 +27,6 @@ const Home = ({ }: HomeProps) => {
 
             <Text style={styles.title}>React Native Ultimate Starter</Text>
 
-            <Text style={styles.title}>{process.env.NODE_ENV}</Text>
-
-
             <Text style={styles.countText}>{count}</Text>
 
             <Button

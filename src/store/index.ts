@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 // log dispatched actions
 import logger from 'redux-logger';
-// for persisting state
+// for persisting store
 import { persistReducer, persistStore } from 'redux-persist';
 // storage type 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -21,7 +21,6 @@ const store = configureStore({
     middleware: [logger],
     devTools: process.env.NODE_ENV !== 'production'
 });
-
 
 export const persistor = persistStore(store);
 
