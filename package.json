@@ -22,12 +22,14 @@
     "npm": "^6.14.8",
     "react": "16.13.1",
     "react-native": "0.63.3",
+    "react-native-easy-icon": "^1.0.7",
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-extra-dimensions-android": "^1.2.5",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.15.0",
+    "react-native-vector-icons": "^7.1.0",
     "react-redux": "^7.2.2",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0"
@@ -47,6 +49,7 @@
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-rename": "^2.5.0",
     "react-test-renderer": "16.13.1",
     "typescript": "^3.8.3"
   },
