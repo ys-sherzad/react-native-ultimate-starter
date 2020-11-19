@@ -22,14 +22,6 @@ const store = configureStore({
     devTools: process.env.NODE_ENV !== 'production'
 });
 
-//@ts-ignore
-if (process.env.NODE_ENV === 'development' && module.hot) {
-    // @ts-ignore
-    module.hot.accept('./rootReducer', () => {
-        const newRootReducer = require('./rootReducer').default
-        store.replaceReducer(newRootReducer)
-    })
-}
 
 export const persistor = persistStore(store);
 
