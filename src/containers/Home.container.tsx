@@ -16,13 +16,16 @@ interface HomeProps { }
 const Home = ({ }: HomeProps) => {
     const dispatch = useDispatch();
 
+    // get users list
     useEffect(() => {
         dispatch(fetchUsers());
     }, []);
 
+    // count state
     const { count } = useSelector(
         (state: RootState) => state.counter,
     );
+    // users state
     const { users, inProgress, error } = useSelector(
         (state: RootState) => state.users
     );
@@ -49,7 +52,7 @@ export default Home;
 const styles = EStyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         padding: Scale.moderateScale(20),
         backgroundColor: '$background'

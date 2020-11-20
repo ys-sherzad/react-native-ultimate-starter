@@ -1,10 +1,8 @@
 'use strict';
 
 import { createSlice } from '@reduxjs/toolkit';
+import { CounterState } from '../types';
 
-interface CounterState {
-    count: number;
-}
 
 const initialState: CounterState = {
     count: 0
