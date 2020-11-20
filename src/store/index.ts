@@ -1,12 +1,15 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-// log dispatched actions
-import logger from 'redux-logger';
-// for persisting store
+import { configureStore, Action } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
-// storage type 
+// middleware
+import thunk, { ThunkAction } from 'redux-thunk';
+import logger from 'redux-logger';
+// storage
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // root reducer
 import rootReducer, { RootState } from './rootReducer';
+
+export type AppDispatch = typeof store.dispatch;
+export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
 
 const persistConfig = {
     storage: AsyncStorage,
@@ -18,14 +21,10 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
     reducer: persistedReducer,
-    middleware: [logger],
+    middleware: [thunk, logger],
     devTools: process.env.NODE_ENV !== 'production'
 });
 
 export const persistor = persistStore(store);
-
-export type AppDispatch = typeof store.dispatch;
-
-export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
 
 export default store;

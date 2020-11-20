@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Text, View, Image } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 // libs
 import EStyleSheet from 'react-native-extended-stylesheet';
 // actions 
 import { increment } from '../slices/counter.slice';
+import { fetchUsers } from '../slices/users.slice';
 // types
 import { RootState } from '../store/rootReducer';
 // utils
 import { Scale } from '../utils';
-import { proc } from 'react-native-reanimated';
 
 interface HomeProps { }
 
 const Home = ({ }: HomeProps) => {
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(fetchUsers());
+    }, []);
+
     const { count } = useSelector(
-        (state: RootState) => state.counter
-    )
+        (state: RootState) => state.counter,
+    );
+    const usersState = useSelector(
+        (state: RootState) => state.users
+    );
+
+    console.log('USERS >>> ', usersState);
 
     return (
         <View style={styles.container}>
