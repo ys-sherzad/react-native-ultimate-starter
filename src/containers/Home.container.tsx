@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button, Text, View, Image } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
 // libs
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { useSelector, useDispatch } from 'react-redux';
 // actions 
 import { increment } from '../slices/counter.slice';
 import { fetchUsers } from '../slices/users.slice';
@@ -16,7 +16,7 @@ interface HomeProps { }
 const Home = ({ }: HomeProps) => {
     const dispatch = useDispatch();
 
-    // get users list
+    // get dummy users list
     useEffect(() => {
         dispatch(fetchUsers());
     }, []);
