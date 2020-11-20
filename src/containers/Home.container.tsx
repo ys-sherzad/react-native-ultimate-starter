@@ -23,11 +23,9 @@ const Home = ({ }: HomeProps) => {
     const { count } = useSelector(
         (state: RootState) => state.counter,
     );
-    const usersState = useSelector(
+    const { users, inProgress, error } = useSelector(
         (state: RootState) => state.users
     );
-
-    console.log('USERS >>> ', usersState);
 
     return (
         <View style={styles.container}>
