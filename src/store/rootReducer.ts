@@ -1,12 +1,14 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 // reducers
-import counterReducer from '../slices/counter.slice';
-import usersReducer from '../slices/users.slice';
+import counterReducer from '../slices/counterSlice';
+import usersReducer from '../slices/usersSlice';
+import appReducer from '../slices/appSlice';
 
 const rootReducer = combineReducers({
     counter: counterReducer,
-    users: usersReducer
+    users: usersReducer,
+    app: appReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>

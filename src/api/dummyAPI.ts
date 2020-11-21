@@ -1,11 +1,11 @@
 import axios from 'axios';
+import { baseURL } from '../config';
 import { User } from '../types';
 
-const url = 'https://jsonplaceholder.typicode.com/users';
-export default class FakeService {
+export default class DummyService {
     static async getUsers(): Promise<User[]> {
         try {
-            const res = await axios.get(url);
+            const res = await axios.get(baseURL + '/users');
             return res.data;
         } catch (ex) {
             throw ex;

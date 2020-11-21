@@ -2,7 +2,7 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // service
-import FakeService from '../api/fakeAPI';
+import DummyService from '../api/dummyAPI';
 // types
 import { AppThunk } from '../store';
 import { User, UsersState } from '../types';
@@ -44,7 +44,7 @@ export default users.reducer;
 export const fetchUsers = (): AppThunk => async dispatch => {
     try {
         dispatch(getUsers());
-        const users = await FakeService.getUsers();
+        const users = await DummyService.getUsers();
         dispatch(getUsersSuccess({ users }))
     } catch (ex) {
         dispatch(getUsersFailure('error:' + ex))

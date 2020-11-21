@@ -1,3 +1,8 @@
+export interface AppState {
+    themeMode: 'light' | 'dark';
+    theme: any;
+}
+
 export interface CounterState {
     count: number;
 }

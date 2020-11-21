@@ -3,7 +3,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CounterState } from '../types';
 
-
 const initialState: CounterState = {
     count: 0
 }

@@ -8,13 +8,10 @@
 import React from 'react';
 
 // libs
-import { NavigationContainer } from '@react-navigation/native';
-import EStyleSheet from 'react-native-extended-stylesheet';
+// import EStyleSheet from 'react-native-extended-stylesheet';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
-// main stack navigation
-import RootStack from './src/navigation/RootStack';
 
 // utils
 import { ThemeLight, ThemeDark } from './src/utils';
@@ -22,17 +19,23 @@ import { ThemeLight, ThemeDark } from './src/utils';
 // store
 import store, { persistor } from './src/store';
 
+// libs
+import { AppearanceProvider } from 'react-native-appearance';
+
+// main App navigation / entry
+import AppNavigation from './src/navigation/AppNavigation';
+
 
 // build styles
-EStyleSheet.build(ThemeDark);
+// EStyleSheet.build(ThemeLight);
 
 const App = () => {
   return (
     <Provider {...{ store }}>
       <PersistGate loading={null} {...{ persistor }}>
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
+        <AppearanceProvider>
+          <AppNavigation />
+        </AppearanceProvider>
       </PersistGate>
     </Provider>
   );
