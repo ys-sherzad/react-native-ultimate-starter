@@ -8,6 +8,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "gradle-clean": "cd android && ./gradlew clean",
     "android-test-release": "react-native run-android --variant=release",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
