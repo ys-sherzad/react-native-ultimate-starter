@@ -9,13 +9,13 @@ import { Scale } from '../utils';
 
 interface SettingsScreenProps { }
 
-const SettingsScreen = (props: SettingsScreenProps) => {
+const SettingsScreen = ({ }: SettingsScreenProps) => {
     const { toggleTheme, theme } = useTheme();
     return (
         <View style={[styles.container, { backgroundColor: theme.$background }]}>
-            {/* <Text style={styles.contentText}>Current Theme is : {EStyleSheet.value('$theme').toUpperCase()}</Text> */}
+            <Text style={[styles.contentText, { color: theme.$text }]}>Current Theme is : {theme.$mode.toUpperCase()}</Text>
             <Button
-                title='Press to Change Theme'
+                title='toggle theme'
                 onPress={toggleTheme}
             />
         </View>

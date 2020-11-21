@@ -4,6 +4,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppState } from '../types';
 import { themes } from '../utils/theme';
 
+import { Appearance } from 'react-native-appearance'
+const systemTheme = Appearance.getColorScheme();
+
 const initialState: AppState = {
     themeMode: 'light',
     theme: themes.light
