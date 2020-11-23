@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { View } from 'react-native';
 // libs
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -9,22 +9,27 @@ import RooStack from './RootStack';
 // context
 import { ThemeProvider } from '../lib/ThemeContext';
 
-// Higher order component providing theme and toggle function props
-import withTheme from '../components/HOC/withTheme';
+// hook
+import useWithTheme from '../components/hooks/useWithTheme';
 
-interface AppNavigationProps {
-    theme: any;
-    toggleTheme: () => {};
-}
+interface AppNavigationProps { }
 
-const AppNavigation = ({ theme, toggleTheme }: AppNavigationProps) => {
+const AppNavigation = ({ }: AppNavigationProps) => {
+    const { theme, toggleTheme } = useWithTheme();
     return (
         <ThemeProvider value={{ theme, toggleTheme }}>
-            <NavigationContainer>
-                <RooStack />
-            </NavigationContainer>
+            {/* wrapping the navigation container with our theme backgroundColor to fix the white flashing background
+             while transitioning between screens on some android devices */}
+            <View style={{ flex: 1, backgroundColor: theme.$background }}>
+                <NavigationContainer>
+                    <RooStack />
+                </NavigationContainer>
+            </View>
         </ThemeProvider>
+
     );
 }
 
-export default withTheme(AppNavigation);
+export default AppNavigation
+
+
