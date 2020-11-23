@@ -2,8 +2,8 @@ import React from 'react';
 import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, View } from 'react-native';
 // utils
 import { PlatformUtils } from '../../utils';
-// theme context
-import useTheme from '../hooks/useTheme';
+// hooks
+import useTheme from '../../hooks/useTheme';
 
 type ButtonProps = React.ComponentProps<typeof TouchableWithoutFeedback> & {
     withoutFeedback?: boolean;

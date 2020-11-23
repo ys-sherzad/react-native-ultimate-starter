@@ -9,12 +9,10 @@ import { fetchUsers } from '../slices/usersSlice';
 import { RootState } from '../store/rootReducer';
 // utils
 import { Scale } from '../utils';
+// hooks
+import useTheme from '../hooks/useTheme';
 
-// context
-import useTheme from '../components/hooks/useTheme';
-
-interface HomeScreenProps {
-}
+interface HomeScreenProps { }
 
 const HomeScreen = ({ }: HomeScreenProps) => {
     const { theme } = useTheme();

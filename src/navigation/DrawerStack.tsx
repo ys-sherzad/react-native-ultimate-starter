@@ -4,7 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // scenes
 import HomeNavigationStack from './HomeStack';
 // theme hook
-import useTheme from '../components/hooks/useTheme';
+import useTheme from '../hooks/useTheme';
 
 interface DrawerProps { }
 

@@ -1,15 +1,15 @@
-import React from 'react';
-import { themes } from '../utils/theme';
+// import React from 'react';
+// import { themes } from '../utils/theme';
 
-// create a context for theme
-const ThemeContext = React.createContext({
-    theme: themes.light,
-    toggleTheme: () => { }
-});
+// // create a context for theme
+// const ThemeContext = React.createContext({
+//     theme: themes.light,
+//     toggleTheme: () => { }
+// });
 
-export const ThemeProvider = ThemeContext.Provider;
-export const ThemeConsumer = ThemeContext.Consumer;
+// export const ThemeProvider = ThemeContext.Provider;
+// export const ThemeConsumer = ThemeContext.Consumer;
 
-export const useTheme = () => React.useContext(ThemeContext);
+// export const useTheme = () => React.useContext(ThemeContext);
 
-export default ThemeContext;
+// export default ThemeContext;

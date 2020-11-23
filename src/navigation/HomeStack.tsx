@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // scenes
 import Home from '../containers/HomeScreen';
 // components
-import useTheme from '../components/hooks/useTheme';
+import useTheme from '../hooks/useTheme';
 import IconButton from '../components/shared/IconButton';
 // utils
 import { Scale } from '../utils';

@@ -9,7 +9,7 @@ import Second from '../containers/SettingsScreen';
 // utils
 import { Scale } from '../utils';
 // theme hook
-import useTheme from '../components/hooks/useTheme';
+import useTheme from '../hooks/useTheme';
 
 
 interface RooStackProps { }

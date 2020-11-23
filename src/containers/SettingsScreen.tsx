@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 // theme hook
-import useTheme from '../components/hooks/useTheme';
+import useTheme from '../hooks/useTheme';
 
 // utils
 import { Scale } from '../utils';
