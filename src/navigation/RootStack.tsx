@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 // libs
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -22,7 +23,7 @@ const RootStackNavigator = createStackNavigator();
 const RooStack = ({ }: RooStackProps) => {
     const { theme } = useTheme()
     return (
-        <RootStackNavigator.Navigator initialRouteName='home'>
+        <RootStackNavigator.Navigator initialRouteName='home' mode='modal'>
             <RootStackNavigator.Screen
                 name='drawer'
                 component={DrawerStack}
@@ -31,6 +32,7 @@ const RooStack = ({ }: RooStackProps) => {
             <RootStackNavigator.Screen
                 name='settings'
                 component={Second}
+
                 options={({ navigation }) => ({
                     headerTitleStyle: { color: theme.$text },
                     headerStyle: { backgroundColor: theme.$headerBackground },
@@ -45,7 +47,6 @@ const RooStack = ({ }: RooStackProps) => {
                     )
                 })}
             />
-
         </RootStackNavigator.Navigator>
     );
 };
