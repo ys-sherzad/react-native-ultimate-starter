@@ -3,8 +3,8 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 // scenes
 import HomeNavigationStack from './HomeStack';
-// theme context
-import { useTheme } from '../lib/ThemeContext';
+// theme hook
+import useTheme from '../components/hooks/useTheme';
 
 interface DrawerProps { }
 

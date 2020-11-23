@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { Button, Text, View, Image, StyleSheet } from 'react-native';
 // libs
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,13 +11,12 @@ import { RootState } from '../store/rootReducer';
 import { Scale } from '../utils';
 
 // context
-import { useTheme } from '../lib/ThemeContext';
+import useTheme from '../components/hooks/useTheme';
 
 interface HomeScreenProps {
-    navigation: any;
 }
 
-const HomeScreen = ({ navigation }: HomeScreenProps) => {
+const HomeScreen = ({ }: HomeScreenProps) => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
 
@@ -25,7 +24,6 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
     useEffect(() => {
         dispatch(fetchUsers());
     }, []);
-
 
     // count state
     const { count } = useSelector(

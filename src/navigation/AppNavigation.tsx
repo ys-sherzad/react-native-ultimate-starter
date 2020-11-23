@@ -6,27 +6,22 @@ import { NavigationContainer } from '@react-navigation/native';
 // main stack navigation
 import RooStack from './RootStack';
 
-// context
-import { ThemeProvider } from '../lib/ThemeContext';
-
-// hook
-import useWithTheme from '../components/hooks/useWithTheme';
+// hook for getting theme from store and its action creator toggle theme,
+// and handle status bar style
+import useTheme from '../components/hooks/useTheme';
 
 interface AppNavigationProps { }
 
+// "NavigationContainer" is wrapped in a view with theme's background color to fix the white flashing background 
+// while transitioning between screens on some android devices.
 const AppNavigation = ({ }: AppNavigationProps) => {
-    const { theme, toggleTheme } = useWithTheme();
+    const { theme } = useTheme();
     return (
-        <ThemeProvider value={{ theme, toggleTheme }}>
-            {/* wrapping the navigation container with our theme backgroundColor to fix the white flashing background
-             while transitioning between screens on some android devices */}
-            <View style={{ flex: 1, backgroundColor: theme.$background }}>
-                <NavigationContainer>
-                    <RooStack />
-                </NavigationContainer>
-            </View>
-        </ThemeProvider>
-
+        <View style={{ flex: 1, backgroundColor: theme.$background }}>
+            <NavigationContainer>
+                <RooStack />
+            </NavigationContainer>
+        </View>
     );
 }
 

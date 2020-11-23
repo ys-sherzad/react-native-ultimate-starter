@@ -5,7 +5,9 @@ import { setTheme } from '../../slices/appSlice';
 import { RootState } from '../../store/rootReducer';
 import { themes } from '../../utils/theme';
 
-const useWithTheme = () => {
+// a hook returning theme and toggle function for updating/toggling theme state in store
+
+const useTheme = () => {
     const dispatch = useDispatch();
 
     const { theme } = useSelector(
@@ -19,6 +21,7 @@ const useWithTheme = () => {
         [theme]
     )
 
+    // handle status bar style on theme change
     const _handleStatusBar = () => {
         const barStyle = theme.$mode === 'light'
             ? 'dark-content'
@@ -26,7 +29,6 @@ const useWithTheme = () => {
         StatusBar.setBackgroundColor(theme.$statusBarBgColor, true);
         StatusBar.setBarStyle(barStyle, true);
     }
-
     useEffect(() => {
         _handleStatusBar();
     }, [theme])
@@ -34,5 +36,5 @@ const useWithTheme = () => {
     return { theme, toggleTheme };
 };
 
-export default useWithTheme;
+export default useTheme;
 

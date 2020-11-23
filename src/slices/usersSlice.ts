@@ -7,12 +7,14 @@ import DummyService from '../api/dummyAPI';
 import { AppThunk } from '../store';
 import { User, UsersState } from '../types';
 
+// set the initial state
 const initialState: UsersState = {
     users: [],
     inProgress: false,
     error: null
 }
 
+// create "users" slice reducer and its creator actions
 const users = createSlice({
     name: 'users',
     initialState,
@@ -23,8 +25,8 @@ const users = createSlice({
         },
         getUsersSuccess(state, action: PayloadAction<{ users: User[] }>) {
             const { users } = action.payload;
-            state.users = users;
             state.inProgress = false;
+            state.users = users;
         },
         getUsersFailure(state, action: PayloadAction<string>) {
             state.inProgress = false;
@@ -41,6 +43,7 @@ export const {
 
 export default users.reducer;
 
+// fetch users from a remote server
 export const fetchUsers = (): AppThunk => async dispatch => {
     try {
         dispatch(getUsers());

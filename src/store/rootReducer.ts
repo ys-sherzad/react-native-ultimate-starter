@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-// import all reducers
+// import all reducers here
 import counterReducer from '../slices/counterSlice';
 import usersReducer from '../slices/usersSlice';
 import appReducer from '../slices/appSlice';
 
-// combine all reducers in to single state object
+// combine all reducers into a single state object
 const rootReducer = combineReducers({
     counter: counterReducer,
     users: usersReducer,

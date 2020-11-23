@@ -8,7 +8,7 @@ import Button from './Button';
 // types
 import { IconType } from 'react-native-easy-icon/src/Icon';
 // theme context
-import { useTheme } from '../../lib/ThemeContext';
+import useTheme from '../hooks/useTheme';
 
 interface Props {
     iconType?: IconType;

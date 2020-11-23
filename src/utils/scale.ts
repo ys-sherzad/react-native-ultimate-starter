@@ -1,3 +1,5 @@
+'use strict';
+
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './dimensions';
 
 //Guideline sizes are based on standard ~5" screen mobile device

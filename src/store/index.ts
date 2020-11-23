@@ -11,6 +11,10 @@ import rootReducer, { RootState } from './rootReducer';
 export type AppDispatch = typeof store.dispatch;
 export type AppThunk = ThunkAction<void, RootState, unknown, Action<string>>;
 
+/**
+ * redux-persist configuration
+ * check https://github.com/rt2zz/redux-persist/blob/master/src/types.js#L13-L27 for other configs
+ */
 const persistConfig = {
     storage: AsyncStorage,
     timeout: 0,
@@ -19,6 +23,10 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+/**
+ * store configuration
+ * https://redux-toolkit.js.org/api/configureStore
+ */
 const store = configureStore({
     reducer: persistedReducer,
     middleware: [thunk, logger],

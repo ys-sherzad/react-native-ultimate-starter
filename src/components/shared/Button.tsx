@@ -3,15 +3,15 @@ import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, Vi
 // utils
 import { PlatformUtils } from '../../utils';
 // theme context
-import { useTheme } from '../../lib/ThemeContext';
+import useTheme from '../hooks/useTheme';
 
-type Props = React.ComponentProps<typeof TouchableWithoutFeedback> & {
+type ButtonProps = React.ComponentProps<typeof TouchableWithoutFeedback> & {
     withoutFeedback?: boolean;
     children: React.ReactNode;
     style?: object;
 };
 
-const Button = (props: Props) => {
+const Button = (props: ButtonProps) => {
     const { theme } = useTheme();
     const { withoutFeedback = false, children, style, ...rest } = props;
 
@@ -47,7 +47,6 @@ const Button = (props: Props) => {
             {children}
         </TouchableOpacity>
     );
-
 
     if (withoutFeedback) {
         return touchableWithoutFeedback();

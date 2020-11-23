@@ -1,6 +1,7 @@
 import React from 'react';
 import { themes } from '../utils/theme';
 
+// create a context for theme
 const ThemeContext = React.createContext({
     theme: themes.light,
     toggleTheme: () => { }

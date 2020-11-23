@@ -4,10 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 // scenes
 import Home from '../containers/HomeScreen';
 // components
-import { useTheme } from '../lib/ThemeContext';
+import useTheme from '../components/hooks/useTheme';
 import IconButton from '../components/shared/IconButton';
+// utils
 import { Scale } from '../utils';
-
 
 
 interface HomeStackProps { }

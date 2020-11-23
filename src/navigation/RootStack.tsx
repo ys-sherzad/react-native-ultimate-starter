@@ -1,19 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
 // libs
 import { createStackNavigator } from '@react-navigation/stack';
-
 // components
 import IconButton from '../components/shared/IconButton';
-
 // scenes
 import DrawerStack from './DrawerStack';
 import Second from '../containers/SettingsScreen';
-// import EStyleSheet from 'react-native-extended-stylesheet';
-
 // utils
 import { Scale } from '../utils';
-import { useTheme } from '../lib/ThemeContext';
+// theme hook
+import useTheme from '../components/hooks/useTheme';
 
 
 interface RooStackProps { }
