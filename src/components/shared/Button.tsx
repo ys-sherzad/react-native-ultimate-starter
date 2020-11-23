@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, View, StyleSheet } from 'react-native';
-// import EStyleSheet from 'react-native-extended-stylesheet';
+import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, View } from 'react-native';
 // utils
 import { PlatformUtils } from '../../utils';
 // theme context
@@ -9,17 +8,18 @@ import { useTheme } from '../../lib/ThemeContext';
 type Props = React.ComponentProps<typeof TouchableWithoutFeedback> & {
     withoutFeedback?: boolean;
     children: React.ReactNode;
+    style?: object;
 };
 
 const Button = (props: Props) => {
     const { theme } = useTheme();
-    const { withoutFeedback = false, children, ...rest } = props;
+    const { withoutFeedback = false, children, style, ...rest } = props;
 
     const touchableWithoutFeedback = () => (
         <TouchableWithoutFeedback
             testID="touchableWithoutFeedback"
             {...rest}>
-            <View style={rest.style}>
+            <View {...{ style }}>
                 {children}
             </View>
         </TouchableWithoutFeedback>
@@ -28,11 +28,15 @@ const Button = (props: Props) => {
     const touchableNativeFeedback = () => (
         <TouchableNativeFeedback
             testID='touchableWithFeedback'
-            {...rest}
             useForeground={TouchableNativeFeedback.canUseNativeForeground()}
-            background={TouchableNativeFeedback.Ripple(theme.$rippleColor, true)}
+            background={
+                PlatformUtils.isAndroidVersion21AndAbove ?
+                    TouchableNativeFeedback.Ripple(theme.$rippleColor, true) :
+                    TouchableNativeFeedback.SelectableBackground()
+            }
+            {...rest}
         >
-            <View style={rest.style}>
+            <View {...{ style }}>
                 {children}
             </View>
         </TouchableNativeFeedback>
