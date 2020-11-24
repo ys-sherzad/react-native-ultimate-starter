@@ -28,7 +28,6 @@ const RooStack = ({ }: RooStackProps) => {
             <RootStackNavigator.Screen
                 name='settings'
                 component={Second}
-
                 options={({ navigation }) => ({
                     headerTitleStyle: { color: theme.$text },
                     headerStyle: { backgroundColor: theme.$headerBackground },
@@ -37,7 +36,8 @@ const RooStack = ({ }: RooStackProps) => {
                             onPress={() => navigation.pop()}
                             iconName='arrow-left'
                             customStyle={{
-                                marginLeft: Scale.moderateScale(10)
+                                padding: Scale.moderateScale(8),
+                                marginLeft: Scale.moderateScale(8)
                             }}
                         />
                     )

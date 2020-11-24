@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 // libs
 import { useSelector, useDispatch } from 'react-redux';
 // actions 
@@ -8,9 +8,11 @@ import { fetchUsers } from '../slices/usersSlice';
 // types
 import { RootState } from '../store/rootReducer';
 // utils
-import { Scale } from '../utils';
+import { Scale, Shape } from '../utils';
 // hooks
 import useTheme from '../hooks/useTheme';
+import Button from '../components/shared/Button';
+import IconButton from '../components/shared/IconButton';
 
 interface HomeScreenProps { }
 
@@ -41,10 +43,10 @@ const HomeScreen = ({ }: HomeScreenProps) => {
 
             <Text style={[styles.countText, { color: theme.$text }]}>{count}</Text>
 
-            <Button
-                title='press to increment'
-                onPress={() => dispatch(increment())}
-            />
+            <Button onPress={() => dispatch(increment())} style={[styles.incrementBtn, { backgroundColor: 'white', borderWidth: 1, borderColor: 'blue', ...Shape.semiRound10, elevation: 4 }]}>
+                <Text>Press</Text>
+            </Button>
+
         </View>
     );
 };
@@ -72,5 +74,10 @@ const styles = StyleSheet.create({
         height: Scale.moderateScale(120),
         width: Scale.moderateScale(120),
         resizeMode: 'contain'
+    },
+    incrementBtn: {
+        height: 50,
+        justifyContent: 'center',
+        paddingHorizontal: 30,
     }
 });

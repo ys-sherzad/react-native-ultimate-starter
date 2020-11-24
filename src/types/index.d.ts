@@ -1,5 +1,5 @@
 export interface AppState {
-    theme: any;
+    theme: Theme;
 }
 export interface CounterState {
     count: number;
@@ -13,4 +13,19 @@ export interface UsersState {
     users: User[];
     inProgress: boolean;
     error: string | null
+}
+
+export type Theme = {
+    $primary: string,
+    $accent: string,
+    $background: string,
+    $headerBackground: string,
+    $surface: string,
+    $disabled: string,
+    $danger: string,
+    $text: string,
+    $iconColor: string,
+    $borderColor: string,
+    $rippleColor: string,
+    $statusBarBgColor: string,
 }

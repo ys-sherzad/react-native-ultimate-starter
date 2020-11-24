@@ -38,8 +38,6 @@ export default IconButton;
 
 const styles = StyleSheet.create({
     container: {
-        height: Scale.moderateScale(32),
-        width: Scale.moderateScale(32),
         justifyContent: 'center',
         alignItems: 'center',
         ...Shape.round,

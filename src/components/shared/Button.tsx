@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, View } from 'react-native';
+import { TouchableWithoutFeedback, TouchableOpacity, TouchableNativeFeedback, View, ViewStyle, StyleProp } from 'react-native';
 // utils
 import { PlatformUtils } from '../../utils';
 // hooks
@@ -7,17 +7,23 @@ import useTheme from '../../hooks/useTheme';
 
 type ButtonProps = React.ComponentProps<typeof TouchableWithoutFeedback> & {
     withoutFeedback?: boolean;
+    withHitSlop?: boolean;
     children: React.ReactNode;
-    style?: object;
+    style?: StyleProp<ViewStyle>;
 };
+
+const hitSlop = { top: 10, left: 10, right: 10, bottom: 10 };
 
 const Button = (props: ButtonProps) => {
     const { theme } = useTheme();
-    const { withoutFeedback = false, children, style, ...rest } = props;
+    const { withoutFeedback = false, children, style, withHitSlop = false, ...rest } = props;
+
+
 
     const touchableWithoutFeedback = () => (
         <TouchableWithoutFeedback
             testID="touchableWithoutFeedback"
+            {...withHitSlop && { hitSlop }}
             {...rest}>
             <View {...{ style }}>
                 {children}
@@ -28,7 +34,8 @@ const Button = (props: ButtonProps) => {
     const touchableNativeFeedback = () => (
         <TouchableNativeFeedback
             testID='touchableWithFeedback'
-            useForeground={TouchableNativeFeedback.canUseNativeForeground()}
+            useForeground={true}
+            {...withHitSlop && { hitSlop }}
             background={
                 PlatformUtils.isAndroidVersion21AndAbove ?
                     TouchableNativeFeedback.Ripple(theme.$rippleColor, true) :
@@ -36,7 +43,7 @@ const Button = (props: ButtonProps) => {
             }
             {...rest}
         >
-            <View {...{ style }}>
+            <View style={[style, { overflow: 'hidden' }]}>
                 {children}
             </View>
         </TouchableNativeFeedback>

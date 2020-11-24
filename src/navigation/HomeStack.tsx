@@ -29,7 +29,8 @@ const HomeStack = ({ }: HomeStackProps) => {
                             onPress={() => navigation.openDrawer()}
                             iconName='menu'
                             customStyle={{
-                                marginLeft: Scale.moderateScale(10),
+                                padding: Scale.moderateScale(8),
+                                marginLeft: Scale.moderateScale(8),
                             }}
                         />
                     ),
@@ -38,7 +39,8 @@ const HomeStack = ({ }: HomeStackProps) => {
                             onPress={() => navigation.navigate('settings')}
                             iconName='settings'
                             customStyle={{
-                                marginRight: Scale.moderateScale(10)
+                                padding: Scale.moderateScale(8),
+                                marginRight: Scale.moderateScale(8)
                             }}
                         />
                     )

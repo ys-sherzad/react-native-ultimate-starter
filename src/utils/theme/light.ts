@@ -1,6 +1,7 @@
+import { Theme } from "../../types";
 import { rem } from "../font";
 
-const light = {
+const light: Theme = {
     // $theme: 'light',
     // $rem: rem,
     $primary: 'blue',
