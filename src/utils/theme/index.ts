@@ -19,7 +19,7 @@ export const themes = {
         $text: 'rgba(255, 255, 255, 0.87)',
         $iconColor: 'rgba(255, 255, 255, 0.87)',
         $borderColor: 'rgba(255, 255, 255, 0.87)',
-        $rippleColor: 'rgba(255, 255, 255, 0.2)',
+        $rippleColor: 'rgba(255, 255, 255, .2)',
         $statusBarBgColor: '#202020'
     },
     light: {
@@ -33,8 +33,8 @@ export const themes = {
         $danger: 'red',
         $text: 'black',
         $iconColor: 'black',
-        $borderColor: 'rgba(255, 255, 255, 0.87)',
-        $rippleColor: 'rgba(0,0,0,0.2)',
+        $borderColor: 'black',
+        $rippleColor: 'rgba(0,0,0,.2)',
         $statusBarBgColor: '#fff',
     }
 }

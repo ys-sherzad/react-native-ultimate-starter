@@ -18,8 +18,6 @@ const Button = (props: ButtonProps) => {
     const { theme } = useTheme();
     const { withoutFeedback = false, children, style, withHitSlop = false, ...rest } = props;
 
-
-
     const touchableWithoutFeedback = () => (
         <TouchableWithoutFeedback
             testID="touchableWithoutFeedback"
@@ -50,7 +48,7 @@ const Button = (props: ButtonProps) => {
     )
 
     const touchableOpacity = () => (
-        <TouchableOpacity testID="touchableOpacity" {...rest}>
+        <TouchableOpacity testID="touchableOpacity" {...{ style }} {...withHitSlop && { hitSlop }} {...rest}>
             {children}
         </TouchableOpacity>
     );

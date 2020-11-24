@@ -1,7 +1,7 @@
 'use strict';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppState } from '../types';
+import { AppState, Theme } from '../types';
 import { themes } from '../utils/theme';
 import { Appearance } from 'react-native-appearance';
 
@@ -24,7 +24,7 @@ const app = createSlice({
     name: 'app',
     initialState,
     reducers: {
-        setTheme(state, action: PayloadAction<{ theme: any }>) {
+        setTheme(state, action: PayloadAction<{ theme: Theme }>) {
             const { theme } = action.payload;
             state.theme = theme;
         }

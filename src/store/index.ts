@@ -19,6 +19,7 @@ const persistConfig = {
     storage: AsyncStorage,
     timeout: 0,
     key: 'my_app',
+    whitelist: []
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

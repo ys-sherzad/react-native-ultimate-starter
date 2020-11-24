@@ -13,8 +13,8 @@ const light: Theme = {
     $danger: 'red',
     $text: 'black',
     $iconColor: 'black',
-    $borderColor: 'rgba(255, 255, 255, 0.87)',
-    $rippleColor: 'rgba(0,0,0,0.2)',
+    $borderColor: '#000',
+    $rippleColor: 'rgba(0,0,0,.2)',
     $statusBarBgColor: '#fff',
 }
 

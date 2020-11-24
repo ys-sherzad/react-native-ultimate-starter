@@ -43,8 +43,8 @@ const HomeScreen = ({ }: HomeScreenProps) => {
 
             <Text style={[styles.countText, { color: theme.$text }]}>{count}</Text>
 
-            <Button onPress={() => dispatch(increment())} style={[styles.incrementBtn, { backgroundColor: 'white', borderWidth: 1, borderColor: 'blue', ...Shape.semiRound10, elevation: 4 }]}>
-                <Text>Press</Text>
+            <Button withHitSlop onPress={() => dispatch(increment())} style={[styles.btn, { borderColor: theme.$borderColor }]}>
+                <Text style={{ color: theme.$text }}>Press</Text>
             </Button>
 
         </View>
@@ -75,9 +75,11 @@ const styles = StyleSheet.create({
         width: Scale.moderateScale(120),
         resizeMode: 'contain'
     },
-    incrementBtn: {
+    btn: {
         height: 50,
         justifyContent: 'center',
         paddingHorizontal: 30,
+        borderWidth: 1,
+        ...Shape.semiRound10
     }
 });

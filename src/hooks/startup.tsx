@@ -8,6 +8,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/rootReducer';
+import { PlatformUtils } from '../utils';
 
 const startup = () => {
 
@@ -26,7 +27,9 @@ const startup = () => {
         const barStyle = theme.$mode === 'light'
             ? 'dark-content'
             : 'light-content';
-        StatusBar.setBackgroundColor(theme.$statusBarBgColor, true);
+        if (PlatformUtils.isAndroid) {
+            StatusBar.setBackgroundColor(theme.$statusBarBgColor, true);
+        }
         StatusBar.setBarStyle(barStyle, true);
     };
 

@@ -11,10 +11,10 @@ const dark: Theme = {
     $surface: 'white',
     $disabled: 'grey',
     $danger: 'red',
-    $text: 'rgba(255, 255, 255, 0.87)',
-    $iconColor: 'rgba(255, 255, 255, 0.87)',
-    $borderColor: 'rgba(255, 255, 255, 0.87)',
-    $rippleColor: 'rgba(255, 255, 255, 0.2)',
+    $text: 'rgba(255, 255, 255, .87)',
+    $iconColor: 'rgba(255, 255, 255, .87)',
+    $borderColor: 'rgba(255, 255, 255, .87)',
+    $rippleColor: 'rgba(255, 255, 255, .2)',
     $statusBarBgColor: '#202020'
 }
 

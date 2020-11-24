@@ -19,7 +19,7 @@ const RootStackNavigator = createStackNavigator();
 const RooStack = ({ }: RooStackProps) => {
     const { theme } = useTheme()
     return (
-        <RootStackNavigator.Navigator initialRouteName='home' mode='modal'>
+        <RootStackNavigator.Navigator initialRouteName='home'>
             <RootStackNavigator.Screen
                 name='drawer'
                 component={DrawerStack}
