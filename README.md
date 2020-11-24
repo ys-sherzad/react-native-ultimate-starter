@@ -15,6 +15,9 @@ Boost your app development and get your project up and running in no time.
 * <b>react-native-easy-icon</b>
 
 <p float="left">
-  <img src="gif/android.gif" width="280" />
-  <img src="gif/ios.gif" width="257" /> 
+  <img src="https://ibb.co/vL555j0" width="280" />
+  <img src="https://ibb.co/fHCZZsZ" width="257" /> 
 </p>
+
+<!-- https://ibb.co/vL555j0
+https://ibb.co/fHCZZsZ -->
