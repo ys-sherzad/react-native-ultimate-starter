@@ -16,7 +16,7 @@ export interface UsersState {
 }
 
 export type Theme = {
-    $mode?: string,
+    $mode: string,
     $primary: string,
     $accent: string,
     $background: string,

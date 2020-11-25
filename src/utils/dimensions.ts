@@ -11,6 +11,12 @@ import { isIOS } from './platform';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = isIOS ? Dimensions.get('window').height : ExtraDimensions.getRealWindowHeight();
 
+
+/**
+ * Add other dimension needs here
+ */
+
+
 export {
     SCREEN_HEIGHT,
     SCREEN_WIDTH

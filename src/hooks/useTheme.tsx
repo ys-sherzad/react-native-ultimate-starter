@@ -4,8 +4,10 @@ import { setTheme } from '../slices/appSlice';
 import { RootState } from '../store/rootReducer';
 import { themes } from '../utils/theme';
 
-// a hook returning theme and toggle function
-// for updating / toggling theme state in store
+/**
+ * A hook returning theme and toggle function
+ * for updating / toggling theme state in store
+ */
 
 const useTheme = () => {
 

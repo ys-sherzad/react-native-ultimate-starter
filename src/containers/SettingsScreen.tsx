@@ -13,11 +13,6 @@ const SettingsScreen = ({ }: SettingsScreenProps) => {
     return (
         <View style={[styles.container, { backgroundColor: theme.$background }]}>
             <Text style={[styles.contentText, { color: theme.$text }]}>Current Theme is : {theme.$mode.toUpperCase()}</Text>
-            {/* <Button
-                title='toggle theme'
-                onPress={toggleTheme}
-            /> */}
-
             <Button withHitSlop onPress={toggleTheme} style={[styles.btn, { borderColor: theme.$borderColor }]}>
                 <Text style={{ color: theme.$text }}>Toggle theme</Text>
             </Button>

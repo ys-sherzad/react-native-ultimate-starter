@@ -9,6 +9,11 @@ const isAndroidVersion21AndAbove = Platform.Version >= 21;
 // const isAndroidRTL = I18nManager.isRTL && isAndroid;
 // const isDeviceTablet = isTablet();
 
+
+/**
+ * Add other platform utils
+ */
+
 export {
     isIOS,
     isAndroid,

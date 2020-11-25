@@ -10,7 +10,9 @@ const semiRound20 = {
     borderRadius: 20
 }
 
-// add more shapes...
+/**
+ * Add other shapes here.
+ */
 
 export {
     round,

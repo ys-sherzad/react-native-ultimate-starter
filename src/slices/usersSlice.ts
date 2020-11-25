@@ -7,14 +7,18 @@ import DummyService from '../api/dummyAPI';
 import { AppThunk } from '../store';
 import { User, UsersState } from '../types';
 
-// set the initial state
+/**
+ * set the initial state
+ */
 const initialState: UsersState = {
     users: [],
     inProgress: false,
     error: null
 }
 
-// create "users" slice reducer and its creator actions
+/**
+ * create "users" slice reducer and its creator actions
+ */
 const users = createSlice({
     name: 'users',
     initialState,
@@ -35,6 +39,9 @@ const users = createSlice({
     }
 });
 
+/**
+ * export the slice action creators
+ */
 export const {
     getUsers,
     getUsersSuccess,
@@ -43,7 +50,9 @@ export const {
 
 export default users.reducer;
 
-// fetch users from a remote server
+/**
+ * fetch users from a remote server
+ */
 export const fetchUsers = (): AppThunk => async dispatch => {
     try {
         dispatch(getUsers());

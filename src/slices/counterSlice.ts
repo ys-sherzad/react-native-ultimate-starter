@@ -3,12 +3,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CounterState } from '../types';
 
-// set the initial state for counter
+/**
+ * set the initial state for counter
+ */
 const initialState: CounterState = {
     count: 0
 }
 
-// create "counter" slice reducer and its action creators
+/**
+ * create "counter" slice reducer and its action creators
+ */
 const counter = createSlice({
     name: 'counter',
     initialState,
@@ -19,6 +23,9 @@ const counter = createSlice({
     }
 });
 
+/**
+ * export the slice action creators
+ */
 export const {
     increment
 } = counter.actions;

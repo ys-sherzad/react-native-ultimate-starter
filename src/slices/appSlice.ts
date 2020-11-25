@@ -5,21 +5,31 @@ import { AppState, Theme } from '../types';
 import { themes } from '../utils/theme';
 import { Appearance } from 'react-native-appearance';
 
-// take system's mode preference
+/**
+ * take system's mode preference
+ */
 const systemTheme = Appearance.getColorScheme();
 
-// get system theme
+/**
+ * 
+ * @param mode light | dark | no-preference
+ * @returns [Theme]
+ */
 const getSystemTheme = (mode: 'light' | 'dark' | 'no-preference') => {
     if (mode === 'no-preference') return themes.light;
     return themes.dark;
 }
 
-// set initial state for theme
+/**
+ * set initial state for theme
+ */
 const initialState: AppState = {
     theme: getSystemTheme(systemTheme)
 }
 
-// create slice reducer and action creators
+/**
+ * create slice reducer and action creators
+ */
 const app = createSlice({
     name: 'app',
     initialState,
@@ -31,6 +41,9 @@ const app = createSlice({
     }
 });
 
+/**
+ * export action creators
+ */
 export const {
     setTheme,
 } = app.actions;

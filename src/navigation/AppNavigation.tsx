@@ -13,13 +13,15 @@ import useTheme from '../hooks/useTheme';
 // start up tasks
 import startup from '../hooks/startup';
 
-interface AppNavigationProps { }
 
 
-// "NavigationContainer" is wrapped in a view with theme's background color to fix the white flashing background 
-// while transitioning between screens on some android devices.
 
-const AppNavigation = ({ }: AppNavigationProps) => {
+/**
+ * 
+ * "NavigationContainer" is wrapped in a view with theme's background color to fix the white flashing background 
+ *  while transitioning between screens on some android devices.
+ */
+const AppNavigation = () => {
     // run start up tasks
     startup();
 

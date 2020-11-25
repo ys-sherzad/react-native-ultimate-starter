@@ -20,6 +20,7 @@ interface Props {
 }
 
 const IconButton = ({ iconType, iconName, onPress, customStyle, iconSize, iconColor }: Props) => {
+    // use theme
     const { theme } = useTheme();
 
     return (
