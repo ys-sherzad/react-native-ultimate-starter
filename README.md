@@ -12,7 +12,7 @@ Boost your app development and get your project up and running in no time. (iOS 
 * <b>[React Navigation 5](https://reactnavigation.org/docs/getting-started)</b> with stack and drawer showcased,
 * <b>Dynamic theme</b> support (dark & light),
 * Powered with few custom components <b>Button</b>, <b>IconButton</b> with more coming soon,
-* <b>Utils</b> are provided. Eg. font, scale, shape, dimensions...etc.
+* <b>Utils</b> are provided, eg. font, scale, shape, dimensions...etc.
 * <b>[React Native Localization](https://github.com/stefalda/ReactNativeLocalization)</b>
 * <b>[React Native Easy Icon](https://github.com/NewBieBR/react-native-easy-icon)</b>
 
