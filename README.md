@@ -14,10 +14,7 @@ Boost your app development and get your project up and running in no time.
 * <b>react-native-localization</b>
 * <b>react-native-easy-icon</b>
 
-<p float="left">
-  <img src="https://ibb.co/vL555j0" width="280" />
-  <img src="https://ibb.co/fHCZZsZ" width="257" /> 
-</p>
 
-<!-- https://ibb.co/vL555j0
-https://ibb.co/fHCZZsZ -->
+| Android                       | iOS                          |
+| ----------------------------- | ----------------------------------- | 
+| <img src="https://i.imgur.com/gCw3hZ1.gif" width="250" /> | <img src="https://i.imgur.com/cGFKBjW.gif" width="230" /> | 
