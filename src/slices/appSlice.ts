@@ -16,7 +16,7 @@ const systemTheme = Appearance.getColorScheme();
  * @returns [Theme]
  */
 const getSystemTheme = (mode: 'light' | 'dark' | 'no-preference') => {
-    if (mode === 'no-preference') return themes.light;
+    if (mode === 'no-preference' || mode === 'light') return themes.light;
     return themes.dark;
 }
 
