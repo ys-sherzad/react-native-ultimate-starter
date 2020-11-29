@@ -14,7 +14,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 
 
 // utils
-import { ThemeLight, ThemeDark } from './src/utils';
+
 
 // store
 import store, { persistor } from './src/store';
