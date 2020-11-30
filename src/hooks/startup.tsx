@@ -33,7 +33,7 @@ const startup = () => {
         StatusBar.setBarStyle(barStyle, true);
     };
 
-    // Add other functions...
+    // Add other start-up tasks...
 
     return null;
 };

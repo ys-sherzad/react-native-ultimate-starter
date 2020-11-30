@@ -2,14 +2,19 @@
  * Importing and exporting all utils here
  * In my opinion its just a cleaner way.
  * 
- * Usage in your components:
+ * Example usage in your components:
  * 
  * import { Dimensions } from 'path/to/utils';
  * 
- * Dimensions.SCREEN_HEIGHT
+ * const styles = StyleSheet.create({
+ *  container: {
+ *      height: Dimensions.SCREEN_HEIGHT,
+ *      width: Dimensions.SCREEN_WIDTH
+ *  }
+ * });
  */
 
-// dimesions
+// dimensions
 import * as Dimensions from './dimensions';
 import * as Shape from './shape';
 import * as Scale from './scale';

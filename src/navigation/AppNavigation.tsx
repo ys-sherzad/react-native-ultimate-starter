@@ -14,10 +14,7 @@ import useTheme from '../hooks/useTheme';
 import startup from '../hooks/startup';
 
 
-
-
 /**
- * 
  * "NavigationContainer" is wrapped in a view with theme's background color to fix the white flashing background 
  *  while transitioning between screens on some android devices.
  */
@@ -33,8 +30,8 @@ const AppNavigation = () => {
             </NavigationContainer>
         </View>
     );
-}
+};
 
-export default AppNavigation
+export default AppNavigation;
 
 
