@@ -10,20 +10,17 @@ import { themes } from '../utils/theme';
  */
 
 const useTheme = () => {
-
     const dispatch = useDispatch();
 
     const { theme } = useSelector(
         (state: RootState) => state.app
     );
-
     const toggleTheme = useCallback(
         () => {
-            dispatch(setTheme({ theme: theme.$mode === 'dark' ? themes.light : themes.dark }))
+            dispatch(setTheme({ theme: theme.$mode === 'dark' ? themes.light : themes.dark }));
         },
         [theme]
     );
-
     return { theme, toggleTheme };
 };
 

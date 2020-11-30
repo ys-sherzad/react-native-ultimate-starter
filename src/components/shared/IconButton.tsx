@@ -24,8 +24,11 @@ const IconButton = ({ iconType, iconName, onPress, customStyle, iconSize, iconCo
     const { theme } = useTheme();
 
     return (
-        <Button onPress={onPress} style={[styles.container, customStyle]}>
+        <Button
+            accessibilityLabel='Tap me!'
+            onPress={onPress} style={[styles.container, customStyle]}>
             <Icon
+                testID='icon'
                 type={iconType || 'feather'}
                 name={iconName}
                 size={iconSize || Scale.moderateScale(20)}

@@ -14,7 +14,6 @@ const SCREEN_HEIGHT = isIOS ? Dimensions.get('window').height : require('react-n
  * Add other dimension needs here
  */
 
-
 export {
     SCREEN_HEIGHT,
     SCREEN_WIDTH
