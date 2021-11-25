@@ -1,3 +1,5 @@
+>*<b>Note:</b> NEEDS UPDATE*
+
 # React Native Ultimate Starter 🎉
 >*<b>Note:</b> This starter is work in progress.*
 
